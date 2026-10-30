@@ -1,0 +1,15 @@
+[Unit]
+Description=Waveshare 2.7in Word Clock
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=pi
+WorkingDirectory=/home/pi/e-Paper/RaspberryPi_JetsonNano/python
+ExecStart=/usr/bin/python3 /home/pi/e-Paper/RaspberryPi_JetsonNano/python/word_clock_epd_2in7_matrix.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
